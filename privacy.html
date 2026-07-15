@@ -25,12 +25,12 @@
   <h2>Optional analytics, advertising, and crash reports</h2>
   <ul>
     <li>Anonymous product and feature events are sent to PostHog only after you opt into analytics. Analytics is disabled by default.</li>
-    <li>AdMob may process device advertising information to serve ads. Personalized ads are disabled until you opt in; premium users do not receive ads.</li>
+    <li>Google AdMob may process device advertising information to serve ads. Google UMP handles regional purposes/vendor consent; the app preference can further force contextual ads. Personalized ads require applicable UMP permission, the app preference, and iOS tracking permission when required. Premium users do not receive ads.</li>
     <li>If configured for a release, Sentry receives anonymous crash diagnostics. Crash events are sent without account identity.</li>
   </ul>
   <h2>Your choices and deletion</h2>
   <ul>
-    <li>Revoke analytics or personalized-ad consent in Settings.</li>
+    <li>Disable analytics or force contextual ads in Settings. Use Google's ad privacy choices entry point when it is shown.</li>
     <li>Delete favorites, clear history, and delete your optional account from in-app Settings.</li>
     <li>Synced account data is removed after account deletion. Local data is removed when cleared or when the app is uninstalled.</li>
   </ul>
