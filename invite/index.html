@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clean Products — Invite</title>
+  <style>
+    :root{color-scheme:light dark}
+    body{
+      font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      max-width:480px;margin:0 auto;padding:32px 20px 40px;
+      color:#172018;background:#fff;
+    }
+    h1{font-size:1.6rem;margin:0 0 4px}
+    .pitch{margin:0 0 24px;color:#3d4a41}
+    .banner{
+      background:#eaf6ef;border:1px solid #bfe4cf;border-radius:12px;
+      padding:16px 18px;margin:0 0 24px;
+    }
+    .banner p{margin:0 0 14px}
+    .code{
+      display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace;
+      font-weight:700;letter-spacing:.05em;color:#0f4b2c;
+      background:#d4ecdd;border-radius:6px;padding:1px 6px;
+    }
+    .btn-primary{
+      display:block;text-align:center;background:#176b45;color:#fff;
+      text-decoration:none;font-weight:600;border-radius:10px;padding:12px 16px;
+    }
+    .btn-primary:active{opacity:.85}
+    .stores{
+      display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+      margin:0 0 28px;
+    }
+    .stores a{line-height:0}
+    .stores img{height:44px;width:auto;max-width:100%}
+    footer{color:#5a6a60;font-size:.9rem}
+    footer a{color:#176b45}
+    @media (prefers-color-scheme: dark){
+      body{background:#0f1512;color:#e8ede9}
+      .pitch{color:#aebcb2}
+      .banner{background:#12281c;border-color:#245239}
+      .code{background:#1c3f2b;color:#8fe0b2}
+      footer{color:#93a39a}
+      footer a{color:#5fd394}
+    }
+    :root[data-theme="dark"] body{background:#0f1512;color:#e8ede9}
+    :root[data-theme="dark"] .pitch{color:#aebcb2}
+    :root[data-theme="dark"] .banner{background:#12281c;border-color:#245239}
+    :root[data-theme="dark"] .code{background:#1c3f2b;color:#8fe0b2}
+    :root[data-theme="dark"] footer{color:#93a39a}
+    :root[data-theme="dark"] footer a{color:#5fd394}
+    :root[data-theme="light"] body{background:#fff;color:#172018}
+  </style>
+</head>
+<body>
+  <h1>Clean Products</h1>
+  <p class="pitch">Scan any product, see how clean it really is.</p>
+
+  <div id="inviteBanner" class="banner" hidden>
+    <p>Your friend invited you — use code <span class="code" id="codeDisplay"></span> for <strong>7 days of Premium free</strong>.</p>
+    <a id="openAppBtn" class="btn-primary" href="#">Open in Clean Products</a>
+  </div>
+
+  <div class="stores">
+    <a href="https://apps.apple.com/app/id6784699313">
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=ro.faintechsolutions.cleanProducts">
+      <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+    </a>
+  </div>
+
+  <footer>
+    <a href="/privacy.html">Privacy</a> ·
+    <a href="/support.html">Support</a> ·
+    <a href="/terms.html">Terms</a>
+  </footer>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get('code');
+      if (code && /^[A-Za-z0-9]+$/.test(code)) {
+        document.getElementById('codeDisplay').textContent = code;
+        document.getElementById('openAppBtn').href = 'cleanproducts://invite/' + encodeURIComponent(code);
+        document.getElementById('inviteBanner').hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>
