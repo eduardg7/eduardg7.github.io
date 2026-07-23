@@ -1,1 +1,1 @@
-[{"relation":["delegate_permission/common.handle_all_urls"],"target":{"namespace":"android_app","package_name":"ro.faintechsolutions.cleanproducts","sha256_cert_fingerprints":["PLACEHOLDER_SHA256_FINGERPRINT"]}}]
+[{"relation":["delegate_permission/common.handle_all_urls"],"target":{"namespace":"android_app","package_name":"ro.faintechsolutions.cleanproducts","sha256_cert_fingerprints":["BE:A5:37:23:57:9B:80:E2:5D:E4:39:B8:5C:BD:75:44:B3:04:6D:0D:7B:86:30:A8:7A:53:C7:E5:27:FF:24:75"]}}]
