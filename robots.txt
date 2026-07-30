@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eduardg7.github.io/
