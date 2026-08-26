@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Clean Products — Scan labels, understand ingredients</title>
-  <meta name="description" content="Scan any product label — food, cosmetics, pet food — and instantly see a 0–100 clean score with every ingredient explained. Free on iOS and Android.">
+  <title>Clean Products — Barcode scanner for a 0–100 clean score</title>
+  <meta name="description" content="Scan a food, cosmetic, or pet-food barcode and see a 0–100 clean score. Every deduction is cited to a public source. Free on iOS and Android.">
   <link rel="canonical" href="https://eduardg7.github.io/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23176b45'/%3E%3Cpath d='M8 20c4-10 12-12 16-12-2 6-4 12-10 14-4 1-6-0.5-6-2z' fill='%23d4ecdd'/%3E%3C/svg%3E" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/og-image.png">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <meta name="theme-color" content="#176b45">
+  <meta name="robots" content="index,follow">
+  <meta name="keywords" content="barcode scanner, clean score, ingredient checker, INCI scanner, food scanner, cosmetic ingredients, pet food label">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Clean Products — Scan labels, understand ingredients">
-  <meta property="og:description" content="Scan any product label and instantly see a 0–100 clean score with every ingredient explained. Free on iOS and Android.">
+  <meta property="og:title" content="Clean Products — Barcode scanner for a 0–100 clean score">
+  <meta property="og:description" content="Scan any product label and instantly see a 0–100 clean score with every deduction cited. Free on iOS and Android.">
   <meta property="og:url" content="https://eduardg7.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://eduardg7.github.io/og-image.png">
@@ -22,13 +23,11 @@
   <meta property="og:image:alt" content="Clean Products app icon">
   <meta property="og:site_name" content="Clean Products">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Clean Products — Scan labels, understand ingredients">
-  <meta name="twitter:description" content="Scan any product label and instantly see a 0–100 clean score with every ingredient explained.">
+  <meta name="twitter:title" content="Clean Products — Barcode scanner for a 0–100 clean score">
+  <meta name="twitter:description" content="Scan a product barcode. Get a 0–100 clean score with cited ingredient deductions.">
   <meta name="twitter:image" content="https://eduardg7.github.io/og-image.png">
 
-  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,11 +35,49 @@
     "name": "Clean Products",
     "operatingSystem": "iOS, Android",
     "applicationCategory": "HealthAndFitnessApplication",
-    "description": "Scan any product label — food, cosmetics, pet food — and instantly see a 0–100 clean score with every ingredient explained.",
+    "description": "Barcode scanner for food, cosmetics, and pet food that returns a 0–100 clean score with every deduction cited to a public source.",
     "url": "https://eduardg7.github.io/",
     "image": "https://eduardg7.github.io/og-image.png",
-    "offers": [
-      { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    "offers": [{ "@type": "Offer", "price": "0", "priceCurrency": "USD" }],
+    "featureList": [
+      "Barcode and label scan",
+      "0–100 clean score",
+      "Cited ingredient deductions",
+      "INCI / cosmetic ingredients",
+      "Allergen and additive alerts",
+      "Offline scan history"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the 0–100 clean score work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clean Products reads the available ingredient list for a scanned barcode and applies a deterministic rule engine. Each deduction names a public regulatory or scientific source. Identical labels produce the identical score on every device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can I scan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Food and drinks, cosmetics and skincare (INCI), household cleaners, and pet food. Scan a barcode, photograph a label, or search by name."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Clean Products free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Core scanning is free and does not require an account. An optional Premium subscription removes ads and unlocks unlimited product compares and advanced analysis."
+        }
+      }
     ]
   }
   </script>
@@ -63,6 +100,7 @@
     }
     .hero .logo svg{width:56px;height:56px}
     h1{font-size:1.75rem;line-height:1.2;margin:0 0 8px}
+    h2{font-size:1.2rem;line-height:1.3;margin:28px 0 10px}
     .tagline{margin:0 0 24px;color:#3d4a41;font-size:1.0625rem}
     .stores{
       display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;
@@ -81,6 +119,9 @@
     }
     .features strong{display:block;font-size:.9375rem}
     .features span{font-size:.875rem;color:#5a6a60}
+    .copy{color:#3d4a41;margin:0 0 16px}
+    .faq dt{font-weight:600;margin-top:14px}
+    .faq dd{margin:4px 0 0;color:#3d4a41}
     footer{margin-top:32px;padding-top:20px;border-top:1px solid #e4ede8;color:#5a6a60;font-size:.9rem}
     footer a{color:#176b45}
     a{color:#176b45}
@@ -94,16 +135,16 @@
           <path d="M8 20c4-10 12-12 16-12-2 6-4 12-10 14-4 1-6-0.5-6-2z" fill="#d4ecdd"/>
         </svg>
       </div>
-      <h1>Clean Products</h1>
-      <p class="tagline">Scan any product label and instantly see how clean it really is.</p>
+      <h1>Clean Products barcode scanner</h1>
+      <p class="tagline">Scan a product label. See a 0–100 clean score with every deduction cited.</p>
     </div>
 
     <div class="stores">
       <a href="https://apps.apple.com/app/id6784699313">
-        <img src="/badges/app-store.svg" alt="Download on the App Store" width="120" height="40" loading="lazy" decoding="async">
+        <img src="/badges/app-store.svg" alt="Download Clean Products on the App Store" width="120" height="40" loading="lazy" decoding="async">
       </a>
       <a href="https://play.google.com/store/apps/details?id=ro.faintechsolutions.cleanproducts">
-        <img src="/badges/google-play.png" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async">
+        <img src="/badges/google-play.png" alt="Get Clean Products on Google Play" width="135" height="40" loading="lazy" decoding="async">
       </a>
     </div>
 
@@ -130,6 +171,23 @@
         </div>
       </li>
     </ul>
+
+    <h2>Product scan for food, beauty, and pet food</h2>
+    <p class="copy">Clean Products is a barcode scanner for packaged goods. Point the camera at an EAN or UPC, photograph an ingredient list, or type a name. The app looks up public catalog data (Open Food Facts, Open Beauty Facts, Open Pet Food Facts) and scores the label with a deterministic 0–100 clean score.</p>
+    <p class="copy">Unlike food-only or cosmetics-only scanners, one install covers groceries, INCI beauty formulas, household cleaners, and pet food. Allergen and additive flags surface when the label lists them.</p>
+
+    <h2>How the clean score is built</h2>
+    <p class="copy">The score starts at 100 and subtracts for hazards, processing, and data gaps. Each line in the breakdown names the rule and a public source — EU CosIng annexes, additives lists, GHS classifications, and similar catalogs. The same ingredients always produce the same number, on-device and on the server.</p>
+
+    <h2>FAQ</h2>
+    <dl class="faq">
+      <dt>Do I need an account to scan a barcode?</dt>
+      <dd>No. Core scanning works without sign-in. Optional sign-in syncs favorites and history.</dd>
+      <dt>Is the clean score medical advice?</dt>
+      <dd>No. Scores are educational estimates. Formulas change — always re-check the physical label for allergies or medical needs.</dd>
+      <dt>What is Premium?</dt>
+      <dd>Premium removes ads and unlocks unlimited product compares and advanced analysis. Restore purchases is on the paywall. Core scanning stays free.</dd>
+    </dl>
   </main>
 
   <footer>
