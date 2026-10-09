@@ -75,7 +75,7 @@
     <a href="https://apps.apple.com/app/id6784699313">
       <img src="/badges/app-store.svg" alt="Download on the App Store" width="120" height="40" loading="lazy" decoding="async">
     </a>
-    <a href="https://play.google.com/store/apps/details?id=ro.faintechsolutions.cleanproducts">
+    <a id="playStoreLink" href="https://play.google.com/store/apps/details?id=ro.faintechsolutions.cleanproducts">
       <img src="/badges/google-play.png" alt="Get it on Google Play" width="135" height="40" loading="lazy" decoding="async">
     </a>
   </div>
@@ -95,6 +95,13 @@
         document.getElementById('codeDisplay').textContent = code;
         document.getElementById('openAppBtn').href = 'cleanproducts://invite/' + encodeURIComponent(code);
         document.getElementById('inviteBanner').hidden = false;
+        // Cold-install attribution (Android): carry the code through the Play
+        // Store via the install referrer. The app reads `invite_code` on first
+        // launch and redeems it like a warm invite deep link. Harmless when
+        // the app-side reader is not shipped yet.
+        document.getElementById('playStoreLink').href =
+          'https://play.google.com/store/apps/details?id=ro.faintechsolutions.cleanproducts' +
+          '&referrer=' + encodeURIComponent('invite_code=' + code);
       }
       var barcode = params.get('barcode');
       if (barcode && /^[A-Za-z0-9]+$/.test(barcode)) {
