@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Sign in to Clean Products — Clean Products</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 560px;
+         margin: 0 auto; padding: 48px 20px 80px; color: #1f2a24; line-height: 1.6; text-align: center; }
+  h1 { font-size: 1.6em; }
+  .cta { display: inline-block; background: #2E7D32; color: #fff; text-decoration: none; font-weight: 600;
+         padding: 14px 32px; border-radius: 12px; margin: 16px 0; }
+  .note { color: #6b6b6b; font-size: 0.9em; }
+  [hidden] { display: none; }
+</style>
+</head>
+<body>
+<!-- AUTH magic link: fallback for when this universal/App Link opens in a browser.
+     It never uses the token: the link parameters are in the URL fragment (never
+     sent to any server) and are only copied into the cleanproducts:// button.
+     The app shows the address and waits for a Continue tap. -->
+<h1>Sign in to Clean Products</h1>
+<p>Open the app to finish signing in.</p>
+<a id="open" class="cta" href="#" hidden>Open Clean Products</a>
+<p id="bad" hidden>This link is incomplete. Request a new one from the Clean Products app.</p>
+<p class="note">Open this link on the phone where Clean Products is installed. If you didn't ask for it, ignore it. Nothing happens until you tap Continue in the app.</p>
+<script>
+(function () {
+  var p = new URLSearchParams(location.hash.slice(1));
+  var ok = p.get('token_hash') && p.get('email') && p.get('type');
+  if (!ok) { document.getElementById('bad').hidden = false; return; }
+  var q = new URLSearchParams();
+  q.set('token_hash', p.get('token_hash')); q.set('type', p.get('type')); q.set('email', p.get('email'));
+  var a = document.getElementById('open');
+  a.href = 'cleanproducts://magic-link?' + q.toString();
+  a.hidden = false;
+})();
+</script>
+</body>
+</html>
